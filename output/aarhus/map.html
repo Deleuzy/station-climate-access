@@ -1,0 +1,1191 @@
+<!DOCTYPE html>
+<html>
+<head>
+    
+    <meta http-equiv="content-type" content="text/html; charset=UTF-8" />
+    <script src="https://cdn.jsdelivr.net/npm/leaflet@1.9.3/dist/leaflet.js"></script>
+    <script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/Leaflet.awesome-markers/2.0.2/leaflet.awesome-markers.js"></script>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/leaflet@1.9.3/dist/leaflet.css"/>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/css/bootstrap.min.css"/>
+    <link rel="stylesheet" href="https://netdna.bootstrapcdn.com/bootstrap/3.0.0/css/bootstrap-glyphicons.css"/>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@6.2.0/css/all.min.css"/>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/Leaflet.awesome-markers/2.0.2/leaflet.awesome-markers.css"/>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/python-visualization/folium/folium/templates/leaflet.awesome.rotate.min.css"/>
+    
+            <meta name="viewport" content="width=device-width,
+                initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
+            <style>
+                #map_d6e4684c49de1b63c7868d7eb2fbe260 {
+                    position: relative;
+                    width: 100.0%;
+                    height: 100.0%;
+                    left: 0.0%;
+                    top: 0.0%;
+                }
+                .leaflet-container { font-size: 1rem; }
+            </style>
+
+            <style>html, body {
+                width: 100%;
+                height: 100%;
+                margin: 0;
+                padding: 0;
+            }
+            </style>
+
+            <style>#map {
+                position:absolute;
+                top:0;
+                bottom:0;
+                right:0;
+                left:0;
+                }
+            </style>
+
+            <script>
+                L_NO_TOUCH = false;
+                L_DISABLE_3D = false;
+            </script>
+
+        
+</head>
+<body>
+    
+    <div style="position:fixed;bottom:20px;left:20px;z-index:999;background:white;padding:8px;border:1px solid #999;font:12px sans-serif"><b>Station class</b><br><div><span style="background:#b2182b;display:inline-block;width:12px;height:12px"></span> high exposure and access</div><div><span style="background:#ef8a62;display:inline-block;width:12px;height:12px"></span> high exposure</div><div><span style="background:#2166ac;display:inline-block;width:12px;height:12px"></span> high access</div><div><span style="background:#7f7f7f;display:inline-block;width:12px;height:12px"></span> other</div><i>Circle size: residential buildings within 800 m</i></div>
+    
+            <div class="folium-map" id="map_d6e4684c49de1b63c7868d7eb2fbe260" ></div>
+        
+</body>
+<script>
+    
+    
+            var map_d6e4684c49de1b63c7868d7eb2fbe260 = L.map(
+                "map_d6e4684c49de1b63c7868d7eb2fbe260",
+                {
+                    center: [56.17101515151515, 10.209369696969697],
+                    crs: L.CRS.EPSG3857,
+                    ...{
+  "zoom": 12,
+  "zoomControl": true,
+  "preferCanvas": false,
+}
+
+                }
+            );
+
+            
+
+        
+    
+            var tile_layer_c7ba74985bcd500d51a2ebb73a5224eb = L.tileLayer(
+                "https://tile.openstreetmap.org/{z}/{x}/{y}.png",
+                {
+  "minZoom": 0,
+  "maxZoom": 19,
+  "maxNativeZoom": 19,
+  "noWrap": false,
+  "attribution": "\u0026copy; \u003ca href=\"https://www.openstreetmap.org/copyright\"\u003eOpenStreetMap\u003c/a\u003e contributors",
+  "subdomains": "abc",
+  "detectRetina": false,
+  "tms": false,
+  "opacity": 1,
+}
+
+            );
+        
+    
+            tile_layer_c7ba74985bcd500d51a2ebb73a5224eb.addTo(map_d6e4684c49de1b63c7868d7eb2fbe260);
+        
+    
+            var circle_marker_88e013b173670f4f726e77b11d4921ce = L.circleMarker(
+                [56.13538, 10.17424],
+                {"bubblingMouseEvents": true, "color": "#b2182b", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#b2182b", "fillOpacity": 0.8, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 4.113333333333333, "stroke": true, "weight": 3}
+            ).addTo(map_d6e4684c49de1b63c7868d7eb2fbe260);
+        
+    
+        var popup_5b970da0f5db0df0f19b045284739c9e = L.popup({
+  "maxWidth": 320,
+});
+
+        
+            
+                var html_6c76a54f4381c45eb9abbdcd62815d91 = $(`<div id="html_6c76a54f4381c45eb9abbdcd62815d91" style="width: 100.0%; height: 100.0%;"><b>Kongsvang</b> (rank 1)<br>Class: high exposure and access<br>Elevation: 15.81 m, ring mean 20.19 m<br>Depression: 4.38 m, lower than 89.1% of ring<br>Exposure index: 0.884<br>Residential buildings within 400 m: 10<br>Residential buildings within 800 m: 68</div>`)[0];
+                popup_5b970da0f5db0df0f19b045284739c9e.setContent(html_6c76a54f4381c45eb9abbdcd62815d91);
+            
+        
+
+        circle_marker_88e013b173670f4f726e77b11d4921ce.bindPopup(popup_5b970da0f5db0df0f19b045284739c9e)
+        ;
+
+        
+    
+    
+            circle_marker_88e013b173670f4f726e77b11d4921ce.bindTooltip(
+                `<div>
+                     Kongsvang
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var circle_marker_f39e67163990d8e1bb0c20111f8d7041 = L.circleMarker(
+                [56.15, 10.20356],
+                {"bubblingMouseEvents": true, "color": "#b2182b", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#b2182b", "fillOpacity": 0.8, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 4.351666666666667, "stroke": true, "weight": 3}
+            ).addTo(map_d6e4684c49de1b63c7868d7eb2fbe260);
+        
+    
+        var popup_c38022ad14d8d69ecbca30cf218f1617 = L.popup({
+  "maxWidth": 320,
+});
+
+        
+            
+                var html_87290c44a74c64289ebbd45199d57fb0 = $(`<div id="html_87290c44a74c64289ebbd45199d57fb0" style="width: 100.0%; height: 100.0%;"><b>Aarhus H</b> (rank 2)<br>Class: high exposure and access<br>Elevation: 11.67 m, ring mean 16.03 m<br>Depression: 4.36 m, lower than 79.1% of ring<br>Exposure index: 0.832<br>Residential buildings within 400 m: 44<br>Residential buildings within 800 m: 211</div>`)[0];
+                popup_c38022ad14d8d69ecbca30cf218f1617.setContent(html_87290c44a74c64289ebbd45199d57fb0);
+            
+        
+
+        circle_marker_f39e67163990d8e1bb0c20111f8d7041.bindPopup(popup_c38022ad14d8d69ecbca30cf218f1617)
+        ;
+
+        
+    
+    
+            circle_marker_f39e67163990d8e1bb0c20111f8d7041.bindTooltip(
+                `<div>
+                     Aarhus H
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var circle_marker_1117bce35f07f5757787f86880906132 = L.circleMarker(
+                [56.18437, 10.23705],
+                {"bubblingMouseEvents": true, "color": "#b2182b", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#b2182b", "fillOpacity": 0.8, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 4.036666666666667, "stroke": true, "weight": 3}
+            ).addTo(map_d6e4684c49de1b63c7868d7eb2fbe260);
+        
+    
+        var popup_dfbd0813715483e5c91bc9d83a83bf96 = L.popup({
+  "maxWidth": 320,
+});
+
+        
+            
+                var html_ae26f139ee5688ffbeb4d02aa98aa5f5 = $(`<div id="html_ae26f139ee5688ffbeb4d02aa98aa5f5" style="width: 100.0%; height: 100.0%;"><b>Risskov Strandpark</b> (rank 3)<br>Class: high exposure and access<br>Elevation: 2.58 m, ring mean 9.01 m<br>Depression: 6.43 m, lower than 62.3% of ring<br>Exposure index: 0.811<br>Residential buildings within 400 m: 7<br>Residential buildings within 800 m: 22</div>`)[0];
+                popup_dfbd0813715483e5c91bc9d83a83bf96.setContent(html_ae26f139ee5688ffbeb4d02aa98aa5f5);
+            
+        
+
+        circle_marker_1117bce35f07f5757787f86880906132.bindPopup(popup_dfbd0813715483e5c91bc9d83a83bf96)
+        ;
+
+        
+    
+    
+            circle_marker_1117bce35f07f5757787f86880906132.bindTooltip(
+                `<div>
+                     Risskov Strandpark
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var circle_marker_2d48cbf580aa1bde826fab1fea23313f = L.circleMarker(
+                [56.03766, 10.19124],
+                {"bubblingMouseEvents": true, "color": "#b2182b", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#b2182b", "fillOpacity": 0.8, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 4.89, "stroke": true, "weight": 3}
+            ).addTo(map_d6e4684c49de1b63c7868d7eb2fbe260);
+        
+    
+        var popup_17489bb2221813a51765470508a78e23 = L.popup({
+  "maxWidth": 320,
+});
+
+        
+            
+                var html_5b850f7a7a387d192f446483ccd3f0d1 = $(`<div id="html_5b850f7a7a387d192f446483ccd3f0d1" style="width: 100.0%; height: 100.0%;"><b>Malling</b> (rank 4)<br>Class: high exposure and access<br>Elevation: 45.86 m, ring mean 49.13 m<br>Depression: 3.27 m, lower than 85.0% of ring<br>Exposure index: 0.752<br>Residential buildings within 400 m: 152<br>Residential buildings within 800 m: 534</div>`)[0];
+                popup_17489bb2221813a51765470508a78e23.setContent(html_5b850f7a7a387d192f446483ccd3f0d1);
+            
+        
+
+        circle_marker_2d48cbf580aa1bde826fab1fea23313f.bindPopup(popup_17489bb2221813a51765470508a78e23)
+        ;
+
+        
+    
+    
+            circle_marker_2d48cbf580aa1bde826fab1fea23313f.bindTooltip(
+                `<div>
+                     Malling
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var circle_marker_e60c82290bbabdda2dde584a238c5875 = L.circleMarker(
+                [56.21674, 10.16464],
+                {"bubblingMouseEvents": true, "color": "#ef8a62", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#ef8a62", "fillOpacity": 0.8, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 4.005, "stroke": true, "weight": 3}
+            ).addTo(map_d6e4684c49de1b63c7868d7eb2fbe260);
+        
+    
+        var popup_b32fe1d3c64c523c6d931c4b10de03e4 = L.popup({
+  "maxWidth": 320,
+});
+
+        
+            
+                var html_bfc69f1c8829433e77b212f896042112 = $(`<div id="html_bfc69f1c8829433e77b212f896042112" style="width: 100.0%; height: 100.0%;"><b>Lisbjerg Bygade</b> (rank 5)<br>Class: high exposure<br>Elevation: 34.4 m, ring mean 38.81 m<br>Depression: 4.42 m, lower than 61.8% of ring<br>Exposure index: 0.751<br>Residential buildings within 400 m: 1<br>Residential buildings within 800 m: 3</div>`)[0];
+                popup_b32fe1d3c64c523c6d931c4b10de03e4.setContent(html_bfc69f1c8829433e77b212f896042112);
+            
+        
+
+        circle_marker_e60c82290bbabdda2dde584a238c5875.bindPopup(popup_b32fe1d3c64c523c6d931c4b10de03e4)
+        ;
+
+        
+    
+    
+            circle_marker_e60c82290bbabdda2dde584a238c5875.bindTooltip(
+                `<div>
+                     Lisbjerg Bygade
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var circle_marker_3731ecbcadc1ceeb2987895c467a3f97 = L.circleMarker(
+                [56.1629, 10.2164],
+                {"bubblingMouseEvents": true, "color": "#2166ac", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#2166ac", "fillOpacity": 0.8, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 4.5600000000000005, "stroke": true, "weight": 3}
+            ).addTo(map_d6e4684c49de1b63c7868d7eb2fbe260);
+        
+    
+        var popup_cb8181c3a474c78ef58e06d72c989c32 = L.popup({
+  "maxWidth": 320,
+});
+
+        
+            
+                var html_fe60fecce92741d998e40e7f349a6dea = $(`<div id="html_fe60fecce92741d998e40e7f349a6dea" style="width: 100.0%; height: 100.0%;"><b>Østbanetorvet</b> (rank 6)<br>Class: high access<br>Elevation: 3.98 m, ring mean 6.92 m<br>Depression: 2.94 m, lower than 51.4% of ring<br>Exposure index: 0.551<br>Residential buildings within 400 m: 49<br>Residential buildings within 800 m: 336</div>`)[0];
+                popup_cb8181c3a474c78ef58e06d72c989c32.setContent(html_fe60fecce92741d998e40e7f349a6dea);
+            
+        
+
+        circle_marker_3731ecbcadc1ceeb2987895c467a3f97.bindPopup(popup_cb8181c3a474c78ef58e06d72c989c32)
+        ;
+
+        
+    
+    
+            circle_marker_3731ecbcadc1ceeb2987895c467a3f97.bindTooltip(
+                `<div>
+                     Østbanetorvet
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var circle_marker_6fbf13f9a530e41edb7605e59fc292ca = L.circleMarker(
+                [56.15415, 10.21298],
+                {"bubblingMouseEvents": true, "color": "#2166ac", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#2166ac", "fillOpacity": 0.8, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 4.176666666666667, "stroke": true, "weight": 3}
+            ).addTo(map_d6e4684c49de1b63c7868d7eb2fbe260);
+        
+    
+        var popup_e926d640880c431104f2f238fa11eebb = L.popup({
+  "maxWidth": 320,
+});
+
+        
+            
+                var html_418d25a5079345ca096af5322acf2641 = $(`<div id="html_418d25a5079345ca096af5322acf2641" style="width: 100.0%; height: 100.0%;"><b>Dokk1</b> (rank 7)<br>Class: high access<br>Elevation: 1.91 m, ring mean 4.08 m<br>Depression: 2.18 m, lower than 55.9% of ring<br>Exposure index: 0.497<br>Residential buildings within 400 m: 27<br>Residential buildings within 800 m: 106</div>`)[0];
+                popup_e926d640880c431104f2f238fa11eebb.setContent(html_418d25a5079345ca096af5322acf2641);
+            
+        
+
+        circle_marker_6fbf13f9a530e41edb7605e59fc292ca.bindPopup(popup_e926d640880c431104f2f238fa11eebb)
+        ;
+
+        
+    
+    
+            circle_marker_6fbf13f9a530e41edb7605e59fc292ca.bindTooltip(
+                `<div>
+                     Dokk1
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var circle_marker_f3cf6b7fe3abcbb2d347c0bccfc4fbcc = L.circleMarker(
+                [56.35606, 10.44794],
+                {"bubblingMouseEvents": true, "color": "#7f7f7f", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#7f7f7f", "fillOpacity": 0.8, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 4.0, "stroke": true, "weight": 3}
+            ).addTo(map_d6e4684c49de1b63c7868d7eb2fbe260);
+        
+    
+        var popup_48b5adce4af920b3cd4e1ae60fe10742 = L.popup({
+  "maxWidth": 320,
+});
+
+        
+            
+                var html_6f0f74e889a3411eb0761125d3c440e6 = $(`<div id="html_6f0f74e889a3411eb0761125d3c440e6" style="width: 100.0%; height: 100.0%;"><b>Thorsager</b> (rank 8)<br>Class: other<br>Elevation: 11.62 m, ring mean 13.58 m<br>Depression: 1.96 m, lower than 59.5% of ring<br>Exposure index: 0.494<br>Residential buildings within 400 m: 0<br>Residential buildings within 800 m: 0</div>`)[0];
+                popup_48b5adce4af920b3cd4e1ae60fe10742.setContent(html_6f0f74e889a3411eb0761125d3c440e6);
+            
+        
+
+        circle_marker_f3cf6b7fe3abcbb2d347c0bccfc4fbcc.bindPopup(popup_48b5adce4af920b3cd4e1ae60fe10742)
+        ;
+
+        
+    
+    
+            circle_marker_f3cf6b7fe3abcbb2d347c0bccfc4fbcc.bindTooltip(
+                `<div>
+                     Thorsager
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var circle_marker_3640d5cc5574178a5d628215f0c9f0ea = L.circleMarker(
+                [56.09658, 10.13582],
+                {"bubblingMouseEvents": true, "color": "#2166ac", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#2166ac", "fillOpacity": 0.8, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 4.683333333333334, "stroke": true, "weight": 3}
+            ).addTo(map_d6e4684c49de1b63c7868d7eb2fbe260);
+        
+    
+        var popup_5277590aabc552a4119585770d0cce05 = L.popup({
+  "maxWidth": 320,
+});
+
+        
+            
+                var html_24f42302c96480a4527d2acef632a7bb = $(`<div id="html_24f42302c96480a4527d2acef632a7bb" style="width: 100.0%; height: 100.0%;"><b>Tranbjerg</b> (rank 9)<br>Class: high access<br>Elevation: 72.49 m, ring mean 73.43 m<br>Depression: 0.94 m, lower than 74.5% of ring<br>Exposure index: 0.467<br>Residential buildings within 400 m: 212<br>Residential buildings within 800 m: 410</div>`)[0];
+                popup_5277590aabc552a4119585770d0cce05.setContent(html_24f42302c96480a4527d2acef632a7bb);
+            
+        
+
+        circle_marker_3640d5cc5574178a5d628215f0c9f0ea.bindPopup(popup_5277590aabc552a4119585770d0cce05)
+        ;
+
+        
+    
+    
+            circle_marker_3640d5cc5574178a5d628215f0c9f0ea.bindTooltip(
+                `<div>
+                     Tranbjerg
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var circle_marker_44d52978e868158f3b6a10388c4b3f9e = L.circleMarker(
+                [56.33933, 10.37602],
+                {"bubblingMouseEvents": true, "color": "#7f7f7f", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#7f7f7f", "fillOpacity": 0.8, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 4.001666666666667, "stroke": true, "weight": 3}
+            ).addTo(map_d6e4684c49de1b63c7868d7eb2fbe260);
+        
+    
+        var popup_37b8a0a701b946724d4663cabc992599 = L.popup({
+  "maxWidth": 320,
+});
+
+        
+            
+                var html_3420246440769bd5a0916ced8baf0636 = $(`<div id="html_3420246440769bd5a0916ced8baf0636" style="width: 100.0%; height: 100.0%;"><b>Mørke</b> (rank 10)<br>Class: other<br>Elevation: 33.27 m, ring mean 34.26 m<br>Depression: 0.99 m, lower than 66.8% of ring<br>Exposure index: 0.433<br>Residential buildings within 400 m: 0<br>Residential buildings within 800 m: 1</div>`)[0];
+                popup_37b8a0a701b946724d4663cabc992599.setContent(html_3420246440769bd5a0916ced8baf0636);
+            
+        
+
+        circle_marker_44d52978e868158f3b6a10388c4b3f9e.bindPopup(popup_37b8a0a701b946724d4663cabc992599)
+        ;
+
+        
+    
+    
+            circle_marker_44d52978e868158f3b6a10388c4b3f9e.bindTooltip(
+                `<div>
+                     Mørke
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var circle_marker_9d15d6387efa8e76f3e96569769b5eb4 = L.circleMarker(
+                [56.19498, 10.23683],
+                {"bubblingMouseEvents": true, "color": "#7f7f7f", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#7f7f7f", "fillOpacity": 0.8, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 4.015, "stroke": true, "weight": 3}
+            ).addTo(map_d6e4684c49de1b63c7868d7eb2fbe260);
+        
+    
+        var popup_0c66dee62c0b42f809f208945387d197 = L.popup({
+  "maxWidth": 320,
+});
+
+        
+            
+                var html_b9e8c1ef20b250ebeb408cdb7d09c61f = $(`<div id="html_b9e8c1ef20b250ebeb408cdb7d09c61f" style="width: 100.0%; height: 100.0%;"><b>Vestre Strandallé</b> (rank 11)<br>Class: other<br>Elevation: 7.24 m, ring mean 9.0 m<br>Depression: 1.76 m, lower than 49.1% of ring<br>Exposure index: 0.421<br>Residential buildings within 400 m: 2<br>Residential buildings within 800 m: 9</div>`)[0];
+                popup_0c66dee62c0b42f809f208945387d197.setContent(html_b9e8c1ef20b250ebeb408cdb7d09c61f);
+            
+        
+
+        circle_marker_9d15d6387efa8e76f3e96569769b5eb4.bindPopup(popup_0c66dee62c0b42f809f208945387d197)
+        ;
+
+        
+    
+    
+            circle_marker_9d15d6387efa8e76f3e96569769b5eb4.bindTooltip(
+                `<div>
+                     Vestre Strandallé
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var circle_marker_aaa3d677b35f25d3105b02fe35f0c4d5 = L.circleMarker(
+                [56.05692, 10.19821],
+                {"bubblingMouseEvents": true, "color": "#7f7f7f", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#7f7f7f", "fillOpacity": 0.8, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 4.025, "stroke": true, "weight": 3}
+            ).addTo(map_d6e4684c49de1b63c7868d7eb2fbe260);
+        
+    
+        var popup_3ae5802e5624a011e9a8c7ceaa231d5f = L.popup({
+  "maxWidth": 320,
+});
+
+        
+            
+                var html_b53fd43a7822cc5aa2d9c6c28c5b5a47 = $(`<div id="html_b53fd43a7822cc5aa2d9c6c28c5b5a47" style="width: 100.0%; height: 100.0%;"><b>Beder</b> (rank 12)<br>Class: other<br>Elevation: 45.6 m, ring mean 46.44 m<br>Depression: 0.84 m, lower than 58.6% of ring<br>Exposure index: 0.377<br>Residential buildings within 400 m: 0<br>Residential buildings within 800 m: 15</div>`)[0];
+                popup_3ae5802e5624a011e9a8c7ceaa231d5f.setContent(html_b53fd43a7822cc5aa2d9c6c28c5b5a47);
+            
+        
+
+        circle_marker_aaa3d677b35f25d3105b02fe35f0c4d5.bindPopup(popup_3ae5802e5624a011e9a8c7ceaa231d5f)
+        ;
+
+        
+    
+    
+            circle_marker_aaa3d677b35f25d3105b02fe35f0c4d5.bindTooltip(
+                `<div>
+                     Beder
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var circle_marker_b315577f36453441fe17461532805faf = L.circleMarker(
+                [56.11148, 10.1258],
+                {"bubblingMouseEvents": true, "color": "#7f7f7f", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#7f7f7f", "fillOpacity": 0.8, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 4.001666666666667, "stroke": true, "weight": 3}
+            ).addTo(map_d6e4684c49de1b63c7868d7eb2fbe260);
+        
+    
+        var popup_264cbf31322a59f6d4d14434084a34f5 = L.popup({
+  "maxWidth": 320,
+});
+
+        
+            
+                var html_8829d51d58eacdaa8751806f010770ec = $(`<div id="html_8829d51d58eacdaa8751806f010770ec" style="width: 100.0%; height: 100.0%;"><b>G. Clausens Vej</b> (rank 13)<br>Class: other<br>Elevation: 63.35 m, ring mean 63.97 m<br>Depression: 0.63 m, lower than 60.9% of ring<br>Exposure index: 0.367<br>Residential buildings within 400 m: 0<br>Residential buildings within 800 m: 1</div>`)[0];
+                popup_264cbf31322a59f6d4d14434084a34f5.setContent(html_8829d51d58eacdaa8751806f010770ec);
+            
+        
+
+        circle_marker_b315577f36453441fe17461532805faf.bindPopup(popup_264cbf31322a59f6d4d14434084a34f5)
+        ;
+
+        
+    
+    
+            circle_marker_b315577f36453441fe17461532805faf.bindTooltip(
+                `<div>
+                     G. Clausens Vej
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var circle_marker_81e4df9edc401dcdb7476d35d4c93064 = L.circleMarker(
+                [56.32054, 10.31364],
+                {"bubblingMouseEvents": true, "color": "#7f7f7f", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#7f7f7f", "fillOpacity": 0.8, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 4.001666666666667, "stroke": true, "weight": 3}
+            ).addTo(map_d6e4684c49de1b63c7868d7eb2fbe260);
+        
+    
+        var popup_a5f8d1060507cab17cad7b1ff7ccfbaa = L.popup({
+  "maxWidth": 320,
+});
+
+        
+            
+                var html_5120d6367f2d5424b04eff2ecd53a94b = $(`<div id="html_5120d6367f2d5424b04eff2ecd53a94b" style="width: 100.0%; height: 100.0%;"><b>Hornslet</b> (rank 14)<br>Class: other<br>Elevation: 34.81 m, ring mean 35.37 m<br>Depression: 0.56 m, lower than 62.3% of ring<br>Exposure index: 0.367<br>Residential buildings within 400 m: 0<br>Residential buildings within 800 m: 1</div>`)[0];
+                popup_a5f8d1060507cab17cad7b1ff7ccfbaa.setContent(html_5120d6367f2d5424b04eff2ecd53a94b);
+            
+        
+
+        circle_marker_81e4df9edc401dcdb7476d35d4c93064.bindPopup(popup_a5f8d1060507cab17cad7b1ff7ccfbaa)
+        ;
+
+        
+    
+    
+            circle_marker_81e4df9edc401dcdb7476d35d4c93064.bindTooltip(
+                `<div>
+                     Hornslet
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var circle_marker_b75a88d0bfcee573eb2f7b6d1cee8587 = L.circleMarker(
+                [56.11697, 10.14718],
+                {"bubblingMouseEvents": true, "color": "#2166ac", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#2166ac", "fillOpacity": 0.8, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 4.211666666666667, "stroke": true, "weight": 3}
+            ).addTo(map_d6e4684c49de1b63c7868d7eb2fbe260);
+        
+    
+        var popup_7d78ed3e13f3c874ddd3d57fcb1be444 = L.popup({
+  "maxWidth": 320,
+});
+
+        
+            
+                var html_35697e759e831e6582ae858a355170c3 = $(`<div id="html_35697e759e831e6582ae858a355170c3" style="width: 100.0%; height: 100.0%;"><b>Rosenhøj</b> (rank 15)<br>Class: high access<br>Elevation: 47.46 m, ring mean 48.51 m<br>Depression: 1.05 m, lower than 51.8% of ring<br>Exposure index: 0.364<br>Residential buildings within 400 m: 3<br>Residential buildings within 800 m: 127</div>`)[0];
+                popup_7d78ed3e13f3c874ddd3d57fcb1be444.setContent(html_35697e759e831e6582ae858a355170c3);
+            
+        
+
+        circle_marker_b75a88d0bfcee573eb2f7b6d1cee8587.bindPopup(popup_7d78ed3e13f3c874ddd3d57fcb1be444)
+        ;
+
+        
+    
+    
+            circle_marker_b75a88d0bfcee573eb2f7b6d1cee8587.bindTooltip(
+                `<div>
+                     Rosenhøj
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var circle_marker_d370070f2e3279b277084b720def20cc = L.circleMarker(
+                [56.20548, 10.22849],
+                {"bubblingMouseEvents": true, "color": "#2166ac", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#2166ac", "fillOpacity": 0.8, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 4.088333333333333, "stroke": true, "weight": 3}
+            ).addTo(map_d6e4684c49de1b63c7868d7eb2fbe260);
+        
+    
+        var popup_0e9bb767245c6a34d43cc7a68e9424d3 = L.popup({
+  "maxWidth": 320,
+});
+
+        
+            
+                var html_b8679db54d3b095b35503f6d25d88f75 = $(`<div id="html_b8679db54d3b095b35503f6d25d88f75" style="width: 100.0%; height: 100.0%;"><b>Torsøvej</b> (rank 16)<br>Class: high access<br>Elevation: 11.44 m, ring mean 11.86 m<br>Depression: 0.42 m, lower than 58.6% of ring<br>Exposure index: 0.335<br>Residential buildings within 400 m: 5<br>Residential buildings within 800 m: 53</div>`)[0];
+                popup_0e9bb767245c6a34d43cc7a68e9424d3.setContent(html_b8679db54d3b095b35503f6d25d88f75);
+            
+        
+
+        circle_marker_d370070f2e3279b277084b720def20cc.bindPopup(popup_0e9bb767245c6a34d43cc7a68e9424d3)
+        ;
+
+        
+    
+    
+            circle_marker_d370070f2e3279b277084b720def20cc.bindTooltip(
+                `<div>
+                     Torsøvej
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var circle_marker_94e3a96463383ce66b34d56914cf0d17 = L.circleMarker(
+                [56.19758, 10.16865],
+                {"bubblingMouseEvents": true, "color": "#7f7f7f", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#7f7f7f", "fillOpacity": 0.8, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 4.005, "stroke": true, "weight": 3}
+            ).addTo(map_d6e4684c49de1b63c7868d7eb2fbe260);
+        
+    
+        var popup_867a0243ff9d609955b6d98cff44a519 = L.popup({
+  "maxWidth": 320,
+});
+
+        
+            
+                var html_795703e3dc0e9e02b329e74de3450ee5 = $(`<div id="html_795703e3dc0e9e02b329e74de3450ee5" style="width: 100.0%; height: 100.0%;"><b>Gl. Skejby</b> (rank 17)<br>Class: other<br>Elevation: 48.43 m, ring mean 49.48 m<br>Depression: 1.05 m, lower than 45.0% of ring<br>Exposure index: 0.33<br>Residential buildings within 400 m: 3<br>Residential buildings within 800 m: 3</div>`)[0];
+                popup_867a0243ff9d609955b6d98cff44a519.setContent(html_795703e3dc0e9e02b329e74de3450ee5);
+            
+        
+
+        circle_marker_94e3a96463383ce66b34d56914cf0d17.bindPopup(popup_867a0243ff9d609955b6d98cff44a519)
+        ;
+
+        
+    
+    
+            circle_marker_94e3a96463383ce66b34d56914cf0d17.bindTooltip(
+                `<div>
+                     Gl. Skejby
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var circle_marker_7725bf4b644cba0ecf48fe0abb3b07e8 = L.circleMarker(
+                [56.24463, 10.26854],
+                {"bubblingMouseEvents": true, "color": "#7f7f7f", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#7f7f7f", "fillOpacity": 0.8, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 4.001666666666667, "stroke": true, "weight": 3}
+            ).addTo(map_d6e4684c49de1b63c7868d7eb2fbe260);
+        
+    
+        var popup_68a402e4b64e77559cce7d104667277b = L.popup({
+  "maxWidth": 320,
+});
+
+        
+            
+                var html_c56fadf2a9c362ee355b241a6403f535 = $(`<div id="html_c56fadf2a9c362ee355b241a6403f535" style="width: 100.0%; height: 100.0%;"><b>Hjortshøj</b> (rank 18)<br>Class: other<br>Elevation: 38.05 m, ring mean 38.06 m<br>Depression: 0.01 m, lower than 59.5% of ring<br>Exposure index: 0.299<br>Residential buildings within 400 m: 1<br>Residential buildings within 800 m: 1</div>`)[0];
+                popup_68a402e4b64e77559cce7d104667277b.setContent(html_c56fadf2a9c362ee355b241a6403f535);
+            
+        
+
+        circle_marker_7725bf4b644cba0ecf48fe0abb3b07e8.bindPopup(popup_68a402e4b64e77559cce7d104667277b)
+        ;
+
+        
+    
+    
+            circle_marker_7725bf4b644cba0ecf48fe0abb3b07e8.bindTooltip(
+                `<div>
+                     Hjortshøj
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var circle_marker_5dae9755c178f3b8dbec11555e2fe879 = L.circleMarker(
+                [56.06878, 10.16429],
+                {"bubblingMouseEvents": true, "color": "#2166ac", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#2166ac", "fillOpacity": 0.8, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 5.03, "stroke": true, "weight": 3}
+            ).addTo(map_d6e4684c49de1b63c7868d7eb2fbe260);
+        
+    
+        var popup_ca80dd2428430b275fb63c45f9c2c93d = L.popup({
+  "maxWidth": 320,
+});
+
+        
+            
+                var html_91ea098c28cfe3481963c7b155988e2a = $(`<div id="html_91ea098c28cfe3481963c7b155988e2a" style="width: 100.0%; height: 100.0%;"><b>Mårslet</b> (rank 19)<br>Class: high access<br>Elevation: 49.98 m, ring mean 50.06 m<br>Depression: 0.08 m, lower than 52.7% of ring<br>Exposure index: 0.272<br>Residential buildings within 400 m: 124<br>Residential buildings within 800 m: 618</div>`)[0];
+                popup_ca80dd2428430b275fb63c45f9c2c93d.setContent(html_91ea098c28cfe3481963c7b155988e2a);
+            
+        
+
+        circle_marker_5dae9755c178f3b8dbec11555e2fe879.bindPopup(popup_ca80dd2428430b275fb63c45f9c2c93d)
+        ;
+
+        
+    
+    
+            circle_marker_5dae9755c178f3b8dbec11555e2fe879.bindTooltip(
+                `<div>
+                     Mårslet
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var circle_marker_ff4c562a5d575e433d6db498091ce4bd = L.circleMarker(
+                [56.27574, 10.31729],
+                {"bubblingMouseEvents": true, "color": "#7f7f7f", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#7f7f7f", "fillOpacity": 0.8, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 4.008333333333334, "stroke": true, "weight": 3}
+            ).addTo(map_d6e4684c49de1b63c7868d7eb2fbe260);
+        
+    
+        var popup_a23373f13101df38dafd0a5928a0b761 = L.popup({
+  "maxWidth": 320,
+});
+
+        
+            
+                var html_57ff9b6ead19e520a1bcf6ea4650849b = $(`<div id="html_57ff9b6ead19e520a1bcf6ea4650849b" style="width: 100.0%; height: 100.0%;"><b>Løgten</b> (rank 20)<br>Class: other<br>Elevation: 57.7 m, ring mean 56.85 m<br>Depression: -0.85 m, lower than 52.7% of ring<br>Exposure index: 0.264<br>Residential buildings within 400 m: 1<br>Residential buildings within 800 m: 5</div>`)[0];
+                popup_a23373f13101df38dafd0a5928a0b761.setContent(html_57ff9b6ead19e520a1bcf6ea4650849b);
+            
+        
+
+        circle_marker_ff4c562a5d575e433d6db498091ce4bd.bindPopup(popup_a23373f13101df38dafd0a5928a0b761)
+        ;
+
+        
+    
+    
+            circle_marker_ff4c562a5d575e433d6db498091ce4bd.bindTooltip(
+                `<div>
+                     Løgten
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var circle_marker_d7532b9c3364ba26b4814d8a872fbf23 = L.circleMarker(
+                [56.1219, 10.15988],
+                {"bubblingMouseEvents": true, "color": "#2166ac", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#2166ac", "fillOpacity": 0.8, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 4.305, "stroke": true, "weight": 3}
+            ).addTo(map_d6e4684c49de1b63c7868d7eb2fbe260);
+        
+    
+        var popup_7a4e8a0c2fdfa5ebf777db719d38437c = L.popup({
+  "maxWidth": 320,
+});
+
+        
+            
+                var html_f1ca66b1803d841bf6dc987151a22f79 = $(`<div id="html_f1ca66b1803d841bf6dc987151a22f79" style="width: 100.0%; height: 100.0%;"><b>Viby J</b> (rank 21)<br>Class: high access<br>Elevation: 32.94 m, ring mean 32.71 m<br>Depression: -0.23 m, lower than 51.8% of ring<br>Exposure index: 0.259<br>Residential buildings within 400 m: 104<br>Residential buildings within 800 m: 183</div>`)[0];
+                popup_7a4e8a0c2fdfa5ebf777db719d38437c.setContent(html_f1ca66b1803d841bf6dc987151a22f79);
+            
+        
+
+        circle_marker_d7532b9c3364ba26b4814d8a872fbf23.bindPopup(popup_7a4e8a0c2fdfa5ebf777db719d38437c)
+        ;
+
+        
+    
+    
+            circle_marker_d7532b9c3364ba26b4814d8a872fbf23.bindTooltip(
+                `<div>
+                     Viby J
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var circle_marker_afd4ddc0a5f3507e046a9063b703ab2a = L.circleMarker(
+                [56.26186, 10.30314],
+                {"bubblingMouseEvents": true, "color": "#2166ac", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#2166ac", "fillOpacity": 0.8, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 4.453333333333333, "stroke": true, "weight": 3}
+            ).addTo(map_d6e4684c49de1b63c7868d7eb2fbe260);
+        
+    
+        var popup_af4bb5a8b0268b1c7893771a4d1a9600 = L.popup({
+  "maxWidth": 320,
+});
+
+        
+            
+                var html_74d32b594fdba65cf0fce0eb5e6495a6 = $(`<div id="html_74d32b594fdba65cf0fce0eb5e6495a6" style="width: 100.0%; height: 100.0%;"><b>Skødstrup</b> (rank 22)<br>Class: high access<br>Elevation: 48.54 m, ring mean 47.44 m<br>Depression: -1.1 m, lower than 47.3% of ring<br>Exposure index: 0.236<br>Residential buildings within 400 m: 91<br>Residential buildings within 800 m: 272</div>`)[0];
+                popup_af4bb5a8b0268b1c7893771a4d1a9600.setContent(html_74d32b594fdba65cf0fce0eb5e6495a6);
+            
+        
+
+        circle_marker_afd4ddc0a5f3507e046a9063b703ab2a.bindPopup(popup_af4bb5a8b0268b1c7893771a4d1a9600)
+        ;
+
+        
+    
+    
+            circle_marker_afd4ddc0a5f3507e046a9063b703ab2a.bindTooltip(
+                `<div>
+                     Skødstrup
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var circle_marker_a91d1dcb98fe7c3a48b4aa523198d8f2 = L.circleMarker(
+                [56.09218, 10.1512],
+                {"bubblingMouseEvents": true, "color": "#2166ac", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#2166ac", "fillOpacity": 0.8, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 4.421666666666667, "stroke": true, "weight": 3}
+            ).addTo(map_d6e4684c49de1b63c7868d7eb2fbe260);
+        
+    
+        var popup_02f4b2ebfd1dff44c8482c4391f4e72f = L.popup({
+  "maxWidth": 320,
+});
+
+        
+            
+                var html_1b34ffc01f49a16e72b0a72012aed61f = $(`<div id="html_1b34ffc01f49a16e72b0a72012aed61f" style="width: 100.0%; height: 100.0%;"><b>Nørrevænget</b> (rank 23)<br>Class: high access<br>Elevation: 66.52 m, ring mean 65.77 m<br>Depression: -0.75 m, lower than 45.5% of ring<br>Exposure index: 0.227<br>Residential buildings within 400 m: 57<br>Residential buildings within 800 m: 253</div>`)[0];
+                popup_02f4b2ebfd1dff44c8482c4391f4e72f.setContent(html_1b34ffc01f49a16e72b0a72012aed61f);
+            
+        
+
+        circle_marker_a91d1dcb98fe7c3a48b4aa523198d8f2.bindPopup(popup_02f4b2ebfd1dff44c8482c4391f4e72f)
+        ;
+
+        
+    
+    
+            circle_marker_a91d1dcb98fe7c3a48b4aa523198d8f2.bindTooltip(
+                `<div>
+                     Nørrevænget
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var circle_marker_a8647afa0c4bbc9e7012beb203a6dfb2 = L.circleMarker(
+                [56.22725, 10.20064],
+                {"bubblingMouseEvents": true, "color": "#7f7f7f", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#7f7f7f", "fillOpacity": 0.8, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 4.016666666666667, "stroke": true, "weight": 3}
+            ).addTo(map_d6e4684c49de1b63c7868d7eb2fbe260);
+        
+    
+        var popup_f2cd6326fae9677607d56831c7619531 = L.popup({
+  "maxWidth": 320,
+});
+
+        
+            
+                var html_bb01b380a731ed8ed5e24436e6b4ad25 = $(`<div id="html_bb01b380a731ed8ed5e24436e6b4ad25" style="width: 100.0%; height: 100.0%;"><b>Nye</b> (rank 24)<br>Class: other<br>Elevation: 41.38 m, ring mean 40.43 m<br>Depression: -0.95 m, lower than 45.0% of ring<br>Exposure index: 0.225<br>Residential buildings within 400 m: 0<br>Residential buildings within 800 m: 10</div>`)[0];
+                popup_f2cd6326fae9677607d56831c7619531.setContent(html_bb01b380a731ed8ed5e24436e6b4ad25);
+            
+        
+
+        circle_marker_a8647afa0c4bbc9e7012beb203a6dfb2.bindPopup(popup_f2cd6326fae9677607d56831c7619531)
+        ;
+
+        
+    
+    
+            circle_marker_a8647afa0c4bbc9e7012beb203a6dfb2.bindTooltip(
+                `<div>
+                     Nye
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var circle_marker_3b6e2fe911c4ab3057014d6cb84745c3 = L.circleMarker(
+                [56.06404, 10.17897],
+                {"bubblingMouseEvents": true, "color": "#2166ac", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#2166ac", "fillOpacity": 0.8, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 4.055, "stroke": true, "weight": 3}
+            ).addTo(map_d6e4684c49de1b63c7868d7eb2fbe260);
+        
+    
+        var popup_bd8a5cb4a642a65408dc6477997832db = L.popup({
+  "maxWidth": 320,
+});
+
+        
+            
+                var html_7a553ed4d77126a0175c28a702a42f14 = $(`<div id="html_7a553ed4d77126a0175c28a702a42f14" style="width: 100.0%; height: 100.0%;"><b>Vilhelmsborg</b> (rank 25)<br>Class: high access<br>Elevation: 42.47 m, ring mean 42.38 m<br>Depression: -0.09 m, lower than 43.6% of ring<br>Exposure index: 0.218<br>Residential buildings within 400 m: 0<br>Residential buildings within 800 m: 33</div>`)[0];
+                popup_bd8a5cb4a642a65408dc6477997832db.setContent(html_7a553ed4d77126a0175c28a702a42f14);
+            
+        
+
+        circle_marker_3b6e2fe911c4ab3057014d6cb84745c3.bindPopup(popup_bd8a5cb4a642a65408dc6477997832db)
+        ;
+
+        
+    
+    
+            circle_marker_3b6e2fe911c4ab3057014d6cb84745c3.bindTooltip(
+                `<div>
+                     Vilhelmsborg
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var circle_marker_88c69bc7cbeed8778a9f3d64e3f7020c = L.circleMarker(
+                [56.21948, 10.1741],
+                {"bubblingMouseEvents": true, "color": "#7f7f7f", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#7f7f7f", "fillOpacity": 0.8, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 4.001666666666667, "stroke": true, "weight": 3}
+            ).addTo(map_d6e4684c49de1b63c7868d7eb2fbe260);
+        
+    
+        var popup_a787f15ce5315e0cee9ea06c17950a81 = L.popup({
+  "maxWidth": 320,
+});
+
+        
+            
+                var html_2cd15798f218b1177e1da1735d5d4e0f = $(`<div id="html_2cd15798f218b1177e1da1735d5d4e0f" style="width: 100.0%; height: 100.0%;"><b>Lisbjerg-Terp</b> (rank 26)<br>Class: other<br>Elevation: 45.81 m, ring mean 43.49 m<br>Depression: -2.33 m, lower than 41.4% of ring<br>Exposure index: 0.207<br>Residential buildings within 400 m: 0<br>Residential buildings within 800 m: 1</div>`)[0];
+                popup_a787f15ce5315e0cee9ea06c17950a81.setContent(html_2cd15798f218b1177e1da1735d5d4e0f);
+            
+        
+
+        circle_marker_88c69bc7cbeed8778a9f3d64e3f7020c.bindPopup(popup_a787f15ce5315e0cee9ea06c17950a81)
+        ;
+
+        
+    
+    
+            circle_marker_88c69bc7cbeed8778a9f3d64e3f7020c.bindTooltip(
+                `<div>
+                     Lisbjerg-Terp
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var circle_marker_cd7bb39c5455760222a94a14e01cc1b0 = L.circleMarker(
+                [56.21236, 10.16377],
+                {"bubblingMouseEvents": true, "color": "#7f7f7f", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#7f7f7f", "fillOpacity": 0.8, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 4.0, "stroke": true, "weight": 3}
+            ).addTo(map_d6e4684c49de1b63c7868d7eb2fbe260);
+        
+    
+        var popup_cdee5315db9e520d449cf9e6b8bb8512 = L.popup({
+  "maxWidth": 320,
+});
+
+        
+            
+                var html_ec4d85ccf76a56de725ff4bc21d7b3be = $(`<div id="html_ec4d85ccf76a56de725ff4bc21d7b3be" style="width: 100.0%; height: 100.0%;"><b>Klokhøjen</b> (rank 27)<br>Class: other<br>Elevation: 28.79 m, ring mean 25.82 m<br>Depression: -2.97 m, lower than 39.5% of ring<br>Exposure index: 0.198<br>Residential buildings within 400 m: 0<br>Residential buildings within 800 m: 0</div>`)[0];
+                popup_cdee5315db9e520d449cf9e6b8bb8512.setContent(html_ec4d85ccf76a56de725ff4bc21d7b3be);
+            
+        
+
+        circle_marker_cd7bb39c5455760222a94a14e01cc1b0.bindPopup(popup_cdee5315db9e520d449cf9e6b8bb8512)
+        ;
+
+        
+    
+    
+            circle_marker_cd7bb39c5455760222a94a14e01cc1b0.bindTooltip(
+                `<div>
+                     Klokhøjen
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var circle_marker_193184fea00ea2eee65f4a0a810ae0dd = L.circleMarker(
+                [56.20342, 10.16626],
+                {"bubblingMouseEvents": true, "color": "#7f7f7f", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#7f7f7f", "fillOpacity": 0.8, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 4.006666666666667, "stroke": true, "weight": 3}
+            ).addTo(map_d6e4684c49de1b63c7868d7eb2fbe260);
+        
+    
+        var popup_3c368a2e0e7208220156034b89b86f6d = L.popup({
+  "maxWidth": 320,
+});
+
+        
+            
+                var html_413e421ee0b018846efd7d7ab91b1f19 = $(`<div id="html_413e421ee0b018846efd7d7ab91b1f19" style="width: 100.0%; height: 100.0%;"><b>Humlehuse</b> (rank 28)<br>Class: other<br>Elevation: 30.35 m, ring mean 29.63 m<br>Depression: -0.73 m, lower than 35.9% of ring<br>Exposure index: 0.18<br>Residential buildings within 400 m: 1<br>Residential buildings within 800 m: 4</div>`)[0];
+                popup_3c368a2e0e7208220156034b89b86f6d.setContent(html_413e421ee0b018846efd7d7ab91b1f19);
+            
+        
+
+        circle_marker_193184fea00ea2eee65f4a0a810ae0dd.bindPopup(popup_3c368a2e0e7208220156034b89b86f6d)
+        ;
+
+        
+    
+    
+            circle_marker_193184fea00ea2eee65f4a0a810ae0dd.bindTooltip(
+                `<div>
+                     Humlehuse
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var circle_marker_af09629f2da1e1ddf5c66d9ae93a62d8 = L.circleMarker(
+                [56.19249, 10.17641],
+                {"bubblingMouseEvents": true, "color": "#7f7f7f", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#7f7f7f", "fillOpacity": 0.8, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 4.026666666666666, "stroke": true, "weight": 3}
+            ).addTo(map_d6e4684c49de1b63c7868d7eb2fbe260);
+        
+    
+        var popup_d0f8091d9408bf2fe9a528b510679708 = L.popup({
+  "maxWidth": 320,
+});
+
+        
+            
+                var html_446a5ecaf63b2ba995ab8f690a72e1ed = $(`<div id="html_446a5ecaf63b2ba995ab8f690a72e1ed" style="width: 100.0%; height: 100.0%;"><b>Universitetshospitalet</b> (rank 29)<br>Class: other<br>Elevation: 61.57 m, ring mean 61.08 m<br>Depression: -0.48 m, lower than 34.1% of ring<br>Exposure index: 0.17<br>Residential buildings within 400 m: 0<br>Residential buildings within 800 m: 16</div>`)[0];
+                popup_d0f8091d9408bf2fe9a528b510679708.setContent(html_446a5ecaf63b2ba995ab8f690a72e1ed);
+            
+        
+
+        circle_marker_af09629f2da1e1ddf5c66d9ae93a62d8.bindPopup(popup_d0f8091d9408bf2fe9a528b510679708)
+        ;
+
+        
+    
+    
+            circle_marker_af09629f2da1e1ddf5c66d9ae93a62d8.bindTooltip(
+                `<div>
+                     Universitetshospitalet
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var circle_marker_0ecf021387902d4c5cc195b3df0bf92f = L.circleMarker(
+                [56.11461, 10.13383],
+                {"bubblingMouseEvents": true, "color": "#2166ac", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#2166ac", "fillOpacity": 0.8, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 4.105, "stroke": true, "weight": 3}
+            ).addTo(map_d6e4684c49de1b63c7868d7eb2fbe260);
+        
+    
+        var popup_26076e1b8f636e512a8bc482fccef4a8 = L.popup({
+  "maxWidth": 320,
+});
+
+        
+            
+                var html_561d24d976a882d1e5bb542939d1a75d = $(`<div id="html_561d24d976a882d1e5bb542939d1a75d" style="width: 100.0%; height: 100.0%;"><b>Øllegårdsvej</b> (rank 30)<br>Class: high access<br>Elevation: 55.63 m, ring mean 54.53 m<br>Depression: -1.1 m, lower than 30.5% of ring<br>Exposure index: 0.152<br>Residential buildings within 400 m: 0<br>Residential buildings within 800 m: 63</div>`)[0];
+                popup_26076e1b8f636e512a8bc482fccef4a8.setContent(html_561d24d976a882d1e5bb542939d1a75d);
+            
+        
+
+        circle_marker_0ecf021387902d4c5cc195b3df0bf92f.bindPopup(popup_26076e1b8f636e512a8bc482fccef4a8)
+        ;
+
+        
+    
+    
+            circle_marker_0ecf021387902d4c5cc195b3df0bf92f.bindTooltip(
+                `<div>
+                     Øllegårdsvej
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var circle_marker_62fb42b2cdf8ce0a40e7b6513cd0f83e = L.circleMarker(
+                [56.23107, 10.2352],
+                {"bubblingMouseEvents": true, "color": "#2166ac", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#2166ac", "fillOpacity": 0.8, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 4.031666666666666, "stroke": true, "weight": 3}
+            ).addTo(map_d6e4684c49de1b63c7868d7eb2fbe260);
+        
+    
+        var popup_3ea583b165a5c04c2b1bd724aabb6b53 = L.popup({
+  "maxWidth": 320,
+});
+
+        
+            
+                var html_8a848d27e7af06ddc01b7411080c8cf4 = $(`<div id="html_8a848d27e7af06ddc01b7411080c8cf4" style="width: 100.0%; height: 100.0%;"><b>Lystrup</b> (rank 31)<br>Class: high access<br>Elevation: 28.21 m, ring mean 26.92 m<br>Depression: -1.29 m, lower than 25.0% of ring<br>Exposure index: 0.125<br>Residential buildings within 400 m: 7<br>Residential buildings within 800 m: 19</div>`)[0];
+                popup_3ea583b165a5c04c2b1bd724aabb6b53.setContent(html_8a848d27e7af06ddc01b7411080c8cf4);
+            
+        
+
+        circle_marker_62fb42b2cdf8ce0a40e7b6513cd0f83e.bindPopup(popup_3ea583b165a5c04c2b1bd724aabb6b53)
+        ;
+
+        
+    
+    
+            circle_marker_62fb42b2cdf8ce0a40e7b6513cd0f83e.bindTooltip(
+                `<div>
+                     Lystrup
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var circle_marker_c2ade62795f931536eb3258dc20875b1 = L.circleMarker(
+                [56.004, 10.1826],
+                {"bubblingMouseEvents": true, "color": "#7f7f7f", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#7f7f7f", "fillOpacity": 0.8, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 4.0, "stroke": true, "weight": 3}
+            ).addTo(map_d6e4684c49de1b63c7868d7eb2fbe260);
+        
+    
+        var popup_a6dbe65668e6d30359e5c4fcbae9d73b = L.popup({
+  "maxWidth": 320,
+});
+
+        
+            
+                var html_d9d396b97677fa0e65f4701effe2b3aa = $(`<div id="html_d9d396b97677fa0e65f4701effe2b3aa" style="width: 100.0%; height: 100.0%;"><b>Assedrup</b> (rank 32)<br>Class: other<br>Elevation: 10.61 m, ring mean 6.4 m<br>Depression: -4.21 m, lower than 24.5% of ring<br>Exposure index: 0.123<br>Residential buildings within 400 m: 0<br>Residential buildings within 800 m: 0</div>`)[0];
+                popup_a6dbe65668e6d30359e5c4fcbae9d73b.setContent(html_d9d396b97677fa0e65f4701effe2b3aa);
+            
+        
+
+        circle_marker_c2ade62795f931536eb3258dc20875b1.bindPopup(popup_a6dbe65668e6d30359e5c4fcbae9d73b)
+        ;
+
+        
+    
+    
+            circle_marker_c2ade62795f931536eb3258dc20875b1.bindTooltip(
+                `<div>
+                     Assedrup
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var circle_marker_89db2b9e5c8122c85afb4f354843668b = L.circleMarker(
+                [56.07257, 10.15439],
+                {"bubblingMouseEvents": true, "color": "#2166ac", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#2166ac", "fillOpacity": 0.8, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 4.785, "stroke": true, "weight": 3}
+            ).addTo(map_d6e4684c49de1b63c7868d7eb2fbe260);
+        
+    
+        var popup_5c4836ab130050294b2c85b27a9967ef = L.popup({
+  "maxWidth": 320,
+});
+
+        
+            
+                var html_1929b91fe859b38075dc96a6291fffb5 = $(`<div id="html_1929b91fe859b38075dc96a6291fffb5" style="width: 100.0%; height: 100.0%;"><b>Mølleparken</b> (rank 33)<br>Class: high access<br>Elevation: 60.73 m, ring mean 57.0 m<br>Depression: -3.74 m, lower than 8.6% of ring<br>Exposure index: 0.043<br>Residential buildings within 400 m: 216<br>Residential buildings within 800 m: 471</div>`)[0];
+                popup_5c4836ab130050294b2c85b27a9967ef.setContent(html_1929b91fe859b38075dc96a6291fffb5);
+            
+        
+
+        circle_marker_89db2b9e5c8122c85afb4f354843668b.bindPopup(popup_5c4836ab130050294b2c85b27a9967ef)
+        ;
+
+        
+    
+    
+            circle_marker_89db2b9e5c8122c85afb4f354843668b.bindTooltip(
+                `<div>
+                     Mølleparken
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+</script>
+</html>

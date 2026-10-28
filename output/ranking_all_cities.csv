@@ -1,0 +1,78 @@
+rank,station,network,lat,lon,station_elev_m,ring_mean_m,depression_m,low_point_pct,exposure_index,high_exposure,residential_400m,residential_800m,high_access,high_exposure_and_access,city
+1,Kongsvang,,56.13538,10.17424,15.81,20.19,4.38,89.1,0.884,True,10,68,True,True,Aarhus
+2,Aarhus H,,56.15,10.20356,11.67,16.03,4.36,79.1,0.832,True,44,211,True,True,Aarhus
+3,Risskov Strandpark,,56.18437,10.23705,2.58,9.01,6.43,62.3,0.811,True,7,22,True,True,Aarhus
+4,Malling,,56.03766,10.19124,45.86,49.13,3.27,85.0,0.752,True,152,534,True,True,Aarhus
+5,Lisbjerg Bygade,,56.21674,10.16464,34.4,38.81,4.42,61.8,0.751,True,1,3,False,False,Aarhus
+6,Østbanetorvet,,56.1629,10.2164,3.98,6.92,2.94,51.4,0.551,False,49,336,True,False,Aarhus
+7,Dokk1,,56.15415,10.21298,1.91,4.08,2.18,55.9,0.497,False,27,106,True,False,Aarhus
+8,Thorsager,,56.35606,10.44794,11.62,13.58,1.96,59.5,0.494,False,0,0,False,False,Aarhus
+9,Tranbjerg,Midttrafik,56.09658,10.13582,72.49,73.43,0.94,74.5,0.467,False,212,410,True,False,Aarhus
+10,Mørke,,56.33933,10.37602,33.27,34.26,0.99,66.8,0.433,False,0,1,False,False,Aarhus
+11,Vestre Strandallé,,56.19498,10.23683,7.24,9.0,1.76,49.1,0.421,False,2,9,False,False,Aarhus
+12,Beder,,56.05692,10.19821,45.6,46.44,0.84,58.6,0.377,False,0,15,False,False,Aarhus
+13,G. Clausens Vej,,56.11148,10.1258,63.35,63.97,0.63,60.9,0.367,False,0,1,False,False,Aarhus
+14,Hornslet,,56.32054,10.31364,34.81,35.37,0.56,62.3,0.367,False,0,1,False,False,Aarhus
+15,Rosenhøj,,56.11697,10.14718,47.46,48.51,1.05,51.8,0.364,False,3,127,True,False,Aarhus
+16,Torsøvej,,56.20548,10.22849,11.44,11.86,0.42,58.6,0.335,False,5,53,True,False,Aarhus
+17,Gl. Skejby,,56.19758,10.16865,48.43,49.48,1.05,45.0,0.33,False,3,3,False,False,Aarhus
+18,Hjortshøj,,56.24463,10.26854,38.05,38.06,0.01,59.5,0.299,False,1,1,False,False,Aarhus
+19,Mårslet,,56.06878,10.16429,49.98,50.06,0.08,52.7,0.272,False,124,618,True,False,Aarhus
+20,Løgten,,56.27574,10.31729,57.7,56.85,-0.85,52.7,0.264,False,1,5,False,False,Aarhus
+21,Viby J,,56.1219,10.15988,32.94,32.71,-0.23,51.8,0.259,False,104,183,True,False,Aarhus
+22,Skødstrup,,56.26186,10.30314,48.54,47.44,-1.1,47.3,0.236,False,91,272,True,False,Aarhus
+23,Nørrevænget,,56.09218,10.1512,66.52,65.77,-0.75,45.5,0.227,False,57,253,True,False,Aarhus
+24,Nye,,56.22725,10.20064,41.38,40.43,-0.95,45.0,0.225,False,0,10,False,False,Aarhus
+25,Vilhelmsborg,,56.06404,10.17897,42.47,42.38,-0.09,43.6,0.218,False,0,33,True,False,Aarhus
+26,Lisbjerg-Terp,,56.21948,10.1741,45.81,43.49,-2.33,41.4,0.207,False,0,1,False,False,Aarhus
+27,Klokhøjen,,56.21236,10.16377,28.79,25.82,-2.97,39.5,0.198,False,0,0,False,False,Aarhus
+28,Humlehuse,,56.20342,10.16626,30.35,29.63,-0.73,35.9,0.18,False,1,4,False,False,Aarhus
+29,Universitetshospitalet,,56.19249,10.17641,61.57,61.08,-0.48,34.1,0.17,False,0,16,False,False,Aarhus
+30,Øllegårdsvej,,56.11461,10.13383,55.63,54.53,-1.1,30.5,0.152,False,0,63,True,False,Aarhus
+31,Lystrup,,56.23107,10.2352,28.21,26.92,-1.29,25.0,0.125,False,7,19,True,False,Aarhus
+32,Assedrup,,56.004,10.1826,10.61,6.4,-4.21,24.5,0.123,False,0,0,False,False,Aarhus
+33,Mølleparken,,56.07257,10.15439,60.73,57.0,-3.74,8.6,0.043,False,216,471,True,False,Aarhus
+1,Nørrebros Runddel,Metro,55.69353,12.54893,8.65,14.97,6.32,99.1,0.995,True,153,465,True,True,Copenhagen
+2,Enghave Plads,Metro,55.66723,12.54679,5.12,10.13,5.01,97.7,0.989,True,123,518,True,True,Copenhagen
+3,Lergravsparken,Metro,55.66224,12.61705,1.49,6.31,4.82,100.0,0.982,True,113,569,True,True,Copenhagen
+4,Trianglen,Metro,55.69925,12.57555,8.36,12.66,4.3,98.2,0.921,True,190,528,True,True,Copenhagen
+5,Nuuks Plads,Metro,55.68848,12.54253,7.96,12.11,4.15,98.2,0.906,True,71,363,True,True,Copenhagen
+6,Øresund,Metro,55.66144,12.62872,1.2,3.63,2.43,99.1,0.738,True,165,666,True,True,Copenhagen
+7,Nørrebro,Metro,55.70005,12.53797,9.55,11.91,2.36,85.0,0.661,True,76,380,True,True,Copenhagen
+8,Vibenhus Runddel,Metro,55.7064,12.56478,13.28,15.51,2.23,78.2,0.614,True,22,450,True,True,Copenhagen
+9,Marmorkirken,Metro,55.68513,12.58903,5.06,11.06,6.0,97.7,0.989,True,57,218,False,False,Copenhagen
+10,Ørestad,Metro,55.62901,12.57935,-1.35,4.78,6.13,94.1,0.97,True,53,327,False,False,Copenhagen
+11,Kongens Nytorv,Metro,55.67963,12.58508,3.99,12.78,8.79,94.1,0.97,True,89,268,False,False,Copenhagen
+12,Amagerbro,Metro,55.6634,12.60289,3.62,6.83,3.21,94.5,0.793,True,90,298,False,False,Copenhagen
+13,Rådhuspladsen,Metro,55.67644,12.5682,6.51,10.8,4.29,70.9,0.784,True,38,299,False,False,Copenhagen
+14,Sluseholmen,Metro,55.64583,12.54441,0.24,3.32,3.08,89.5,0.756,True,22,104,False,False,Copenhagen
+15,Nordhavn,Metro,55.70743,12.59157,1.16,4.15,3.0,87.3,0.736,True,59,290,False,False,Copenhagen
+16,Gammel Strand,Metro,55.67759,12.57893,5.9,9.82,3.92,68.2,0.733,True,100,277,False,False,Copenhagen
+17,Aksel Møllers Have,Metro,55.68605,12.53295,12.57,14.97,2.39,90.0,0.689,True,55,144,False,False,Copenhagen
+18,Frederiksberg,Metro,55.68117,12.53222,13.99,16.45,2.46,76.8,0.63,True,35,153,False,False,Copenhagen
+19,Mozarts Plads,Metro,55.64897,12.53434,4.51,6.39,1.87,84.1,0.608,True,55,172,False,False,Copenhagen
+20,Lindevang,Metro,55.68345,12.51319,13.84,15.96,2.12,79.1,0.607,True,21,164,False,False,Copenhagen
+21,Fasanvej,Metro,55.68159,12.52357,15.27,17.29,2.02,80.0,0.602,True,38,110,False,False,Copenhagen
+22,Havneholmen,Metro,55.66099,12.55931,2.44,5.09,2.64,64.5,0.587,False,32,140,False,False,Copenhagen
+23,Kastrup,Metro,55.63572,12.64695,2.26,3.46,1.2,90.5,0.572,False,135,340,True,False,Copenhagen
+24,Forum,Metro,55.68181,12.55254,7.78,9.67,1.89,73.6,0.557,False,139,538,True,False,Copenhagen
+25,Frederiksberg Allé,Metro,55.67351,12.54061,11.16,12.5,1.34,71.8,0.493,False,173,560,True,False,Copenhagen
+26,Islands Brygge,Metro,55.66341,12.58521,2.55,4.29,1.73,63.2,0.489,False,25,71,False,False,Copenhagen
+27,Orientkaj,Metro,55.71184,12.59518,1.4,2.37,0.97,66.8,0.431,False,17,71,False,False,Copenhagen
+28,København Syd,Metro,55.65299,12.51597,5.09,6.12,1.03,65.0,0.428,False,108,381,True,False,Copenhagen
+29,Vanløse,Metro,55.68715,12.4925,13.1,13.69,0.59,71.8,0.418,False,203,798,True,False,Copenhagen
+30,Københavns Hovedbanegård,Metro,55.6714,12.56388,6.87,8.2,1.33,53.2,0.399,False,63,281,False,False,Copenhagen
+31,Vestamager,Metro,55.61937,12.57558,1.35,1.64,0.29,64.5,0.352,False,45,468,True,False,Copenhagen
+32,Christianshavn,Metro,55.6721,12.59138,6.28,6.74,0.46,60.5,0.348,False,27,63,False,False,Copenhagen
+33,Skjolds Plads,Metro,55.7035,12.54877,15.31,15.83,0.52,54.5,0.324,False,122,364,True,False,Copenhagen
+34,Enghave Brygge,Metro,55.65407,12.55651,1.81,1.99,0.18,53.2,0.283,False,17,139,False,False,Copenhagen
+35,Amager Strand,Metro,55.65614,12.63186,2.74,2.85,0.1,53.2,0.276,False,356,1036,True,False,Copenhagen
+36,Nørreport,Metro,55.6838,12.57124,16.38,14.28,-2.09,35.0,0.175,False,89,381,True,False,Copenhagen
+37,Flintholm,Metro,55.68587,12.49949,13.67,12.98,-0.68,34.1,0.17,False,157,653,True,False,Copenhagen
+38,Østerport,Metro,55.69288,12.58592,10.11,8.35,-1.76,30.5,0.152,False,43,329,False,False,Copenhagen
+39,Københavns Lufthavn,Metro,55.63091,12.64922,4.98,4.39,-0.59,26.4,0.132,False,64,163,False,False,Copenhagen
+40,Femøren,Metro,55.64519,12.63834,4.08,3.39,-0.69,25.5,0.127,False,66,700,True,False,Copenhagen
+41,Sundby,Metro,55.64525,12.58572,3.34,2.86,-0.48,19.1,0.095,False,88,573,True,False,Copenhagen
+42,DR Byen,Metro,55.65577,12.58902,3.46,2.71,-0.75,19.1,0.095,False,48,261,False,False,Copenhagen
+43,Bella Center,Metro,55.63807,12.58293,5.43,3.51,-1.93,13.2,0.066,False,93,671,True,False,Copenhagen
+44,Poul Henningsens Plads,Metro,55.70948,12.57614,18.64,13.32,-5.33,7.3,0.036,False,114,421,True,False,Copenhagen
